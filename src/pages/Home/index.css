@@ -101,3 +101,17 @@ input:focus{
     padding-bottom: 0;
   }
 }
+
+@media (max-width: 500px){
+  input{
+    font-size: 12px;
+  }
+
+  .s-input{
+    font-size: 12px;
+  }
+
+  .error-message{
+    font-size: 16px;
+  }
+}
