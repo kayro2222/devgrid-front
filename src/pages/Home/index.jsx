@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Header from '../../components/Header';
-import Weather from '../../components/Weather';
+import Header from 'components/Header';
+import Weather from 'components/Weather';
 import './index.css';
-import api from '../../services/api';
+import api from 'services/api';
 
 function Home() {
   const [weathers, setWeathers] = useState(null);
@@ -52,11 +52,13 @@ function Home() {
                 <Weather weather={weathers[0]} />
               </div>
             )}
-            <div className="all-weathers m-mobile">
-              {weathers && weathers.map((weather) => (
-                <Weather weather={weather} />
-              ))}
-            </div>
+            {weathers ? (
+              <div className="all-weathers m-mobile">
+                {weathers.map((weather) => (
+                  <Weather key={weather.name} weather={weather} />
+                ))}
+              </div>
+            ) : null}
           </div>
         </div>
       </div>
