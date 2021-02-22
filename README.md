@@ -46,4 +46,4 @@ yarn test
 * [ReactJS](https://reactjs.org/)
 * [React-Scripts](https://create-react-app.dev/docs/getting-started/)
 * [Docker](https://www.docker.com/)
-* [JEST](https://jestjs.io/)
+* [Jest](https://jestjs.io/)
