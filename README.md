@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# DevGrid Weather React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Getting Started
 
-## Available Scripts
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-In the project directory, you can run:
+### Prerequisites
 
-### `yarn start`
+- [Install Docker](https://docs.docker.com/engine/install/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Installing
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+First, you will need to copy the .env.example to .env in the root directory
 
-### `yarn test`
+```
+cp .env.example .env
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+After input/check the correct values at .env, on the root directory, run the Docker
+Note that the .env.example file already has a configuration values that you can use. Feel free to change it.
 
-### `yarn build`
+```
+docker-compose up -d
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The app will run in http://localhost:3000
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Tests
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To run tests, you have two options.
 
-### `yarn eject`
+First, to run tests outside of the docker container, use
+```
+docker-compose run devgrid-front yarn test
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Second, to run tests inside of the docker container, use
+```
+docker-compose up -d
+docker exec -it devgrid-front /bin/sh
+yarn test
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Built With
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* [ReactJS](https://reactjs.org/)
+* [React-Scripts](https://create-react-app.dev/docs/getting-started/)
+* [Docker](https://www.docker.com/)
+* [JEST](https://jestjs.io/)
