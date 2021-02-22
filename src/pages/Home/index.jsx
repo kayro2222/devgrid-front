@@ -15,7 +15,11 @@ function Home() {
           setErrorMessage(null);
           setWeathers(response?.data);
         }).catch((error) => {
-          setErrorMessage(error?.response.data.message);
+          if (error.response) {
+            setErrorMessage(error?.response.data.message);
+          } else {
+            setErrorMessage('Sorry. A system problem has ocurred');
+          }
         });
     }
   };
